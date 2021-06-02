@@ -9,7 +9,7 @@
 
 
 const nrfx_timer_t TIMER_LED = NRFX_TIMER_INSTANCE(0); // Timer 0 Enabled
-uint32_t count=0;
+uint32_t count=0; // Declared count variable to count the every 509ms
 
 void timer0_handler(nrf_timer_event_t event_type, void* p_context)
 {
@@ -17,7 +17,7 @@ void timer0_handler(nrf_timer_event_t event_type, void* p_context)
   {
       case NRF_TIMER_EVENT_COMPARE0:
 
-      count+=1;
+      count+=1;//count will increase for every 509ms
 
       break;
 
@@ -34,9 +34,9 @@ void timer0_handler(nrf_timer_event_t event_type, void* p_context)
 
 void timer_init(uint32_t time)
 {
-  uint32_t err_code = NRF_SUCCESS;
+  uint32_t err_code = NRF_SUCCESS;// create a error code to check the error by storing the NRF_SUCCESS
 
-  uint32_t time_ms = time;
+  uint32_t time_ms = time;//get the desired time delay
 
   uint32_t time_ticks;
 
@@ -57,13 +57,13 @@ void timer_init(uint32_t time)
 
 int main(void)
 {
-    timer_init(509);
+    timer_init(509);// pass the time in ms 
 
-    nrfx_timer_enable(&TIMER_LED);
+    nrfx_timer_enable(&TIMER_LED);// Enable the timer
 
     while (1)
     {
-         printf("Count value: %d \r\n",count);
+         printf("Count value: %d \r\n",count);//For every 509ms count value will increament
     }
 }
 
