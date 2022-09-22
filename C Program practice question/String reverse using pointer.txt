@@ -1,0 +1,37 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    char *ptr1, *ptr2, *ptr3;
+    char a[MAX_SIZE], b[MAX_SIZE];
+    int i, temp, j, len;
+    
+    ptr1 = a;
+    
+    printf("Enter array length: ");
+    scanf("%d", &len);
+    printf("Enter the pointer element: ");
+    for(i=0; i<=len; i++)
+    {
+        scanf("%c", ptr1);
+        ptr1++;
+    }
+    j = len;
+    for(i=0; i<=len; i++)
+    {
+        b[i] = a[j];
+        //printf("%c", a[j]);
+        j--;
+    }
+	printf("Input:%s Reversed Input:%s",a,b);
+
+	return 0;
+}
+
+
+
+OUTPUT:
+Enter array length: 9
+Enter the pointer element: MICROCHIP
+Input:
+MICROCHIP Reversed Input:PIHCORCIM

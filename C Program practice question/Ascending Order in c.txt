@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr1[MAX_SIZE], arr2[MAX_SIZE], *ptr1;
+    int i, len, Biggest_Num, count=0, j, temp, k=0;
+    
+    ptr1 = arr1;
+    
+    printf("Enter the array size: ");
+    scanf("%d", &len);
+    printf("Enter the array: ");
+    for(i=0; i<len; i++)
+    {
+        scanf("%d", ptr1);
+        ptr1++;
+    }
+    
+    for(i=0; i<len; i++)
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(arr1[i] >= arr1[j])
+            {
+                temp  = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
+    printf("Ascending Order: ");
+    for(i=0; i<len; i++)
+    {
+        printf("%d ", arr1[i]);
+    }
+    return 0;
+}
+
+OUTPUT:
+Enter the array size: 5
+Enter the array: 234
+1
+425
+0
+34
+Ascending Order: 0 1 34 234 425 

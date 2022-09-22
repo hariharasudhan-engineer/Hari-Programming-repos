@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+union endianess
+{
+    int a;
+};
+
+int main()
+{
+    union endianess var;
+    var.a = 0x00000001;
+    if((((char *)&var.a)[0]))
+    {
+        printf("Little Endian");
+    }
+    else
+    {
+        printf("Big Endian");
+    } 
+}

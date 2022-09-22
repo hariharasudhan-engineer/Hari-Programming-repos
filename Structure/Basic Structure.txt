@@ -1,0 +1,22 @@
+#include <stdio.h>
+struct person
+{
+   int age;
+};
+
+int main()
+{
+    struct person person1, person2;
+    
+    printf("Enter the age1: ");
+    scanf("%d", &person1.age);
+    
+    printf("Enter the age2: ");
+    scanf("%d", &person2.age);
+    
+    printf("\n%d ", sizeof(person1));
+    printf("\nPerson1: %d", &person1.age);
+    printf("\nPerson2: %d", &person2.age);
+    
+    return 0;
+}

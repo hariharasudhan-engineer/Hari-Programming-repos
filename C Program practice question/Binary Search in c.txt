@@ -1,0 +1,70 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr1[MAX_SIZE], arr2[MAX_SIZE], *ptr1, a[50], Binary_Arr[50];
+    int i, len, Biggest_Num, count=0, j, temp, k=0, Binary_Num, len_binary;
+    
+    ptr1 = arr1;
+    
+    printf("Enter the array size: ");
+    scanf("%d", &len);
+    printf("Enter the array: ");
+    for(i=0; i<len; i++)
+    {
+        scanf("%d", ptr1);
+        ptr1++;
+    }
+    printf("Enter the binary size: ");
+    scanf("%d", &len_binary);
+    printf("Enter Your Searching Number in Binary : ");
+    for(i=0; i<len_binary; i++)
+    {
+        scanf("%d", &Binary_Arr[i]);
+    }
+    
+
+    for(i=0; i<len; i++)
+    {
+        temp = arr1[i];
+/************** Convert decimal into binary **********************/
+        for(j=0;temp>0;j++)    
+        {    
+            a[j]=temp%2;    
+            temp=temp/2;
+        } 
+/************** END **************************************/
+/********* Check entered number with searching binary number *******************/
+        for(k=j-1; k>=0; k--)
+        {
+            if(a[k] == Binary_Arr[len_binary-k-1])
+            {
+                count++;
+                if(count == len_binary)
+                {
+                    printf("\nOUTPUT: %d", arr1[i]);
+                    return 0;
+                }
+            }
+        }
+        count = 0;
+    }
+}
+
+
+OUTPUT:
+Enter the array size: 5
+Enter the array: 23
+21
+2
+3
+4
+Enter the binary size: 5
+Enter Your Searching Number in Binary : 1
+0
+1
+0
+1
+
+ OUTPUT: 21

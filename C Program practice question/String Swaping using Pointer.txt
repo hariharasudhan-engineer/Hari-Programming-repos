@@ -1,0 +1,78 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    char *ptr1, *ptr2, *ptr3;
+    char str1[MAX_SIZE], str2[MAX_SIZE], str3[MAX_SIZE];
+    int i, temp, j, str1_len, str2_len;
+    
+    ptr1 = str1;
+    ptr2 = str2;
+    
+    printf("Enter str1 length: ");
+    scanf("%d", &str1_len);
+    printf("Enter str2 length: ");
+    scanf("%d", &str2_len);
+    
+    printf("Enter the string 1: ");
+    for(i=0; i<=str1_len; i++)
+    {
+        scanf("%c", ptr1);
+        ptr1++;
+    }
+    
+    printf("Enter the string 2: ");
+    for(i=0; i<=str2_len; i++)
+    {
+        scanf("%c", ptr2);
+        ptr2++;
+    }
+    
+    if(str1_len > str2_len)
+    {
+        for(i=0; str1[i]!='\0';i++)
+        {
+            str3[i] = str1[i];
+            str1[i] = str2[i];
+            str2[i] = str3[i];
+        }
+    }
+    
+    else if(str2_len > str1_len)
+    {
+        for(i=0; str2[i]!='\0';i++)
+        {
+            str3[i] = str1[i];
+            str1[i] = str2[i];
+            str2[i] = str3[i];
+        }
+    }
+    
+    else // Both str has equal length
+    {
+        for(i=0; str2[i]!='\0';i++)
+        {
+            str3[i] = str1[i];
+            str1[i] = str2[i];
+            str2[i] = str3[i];
+        }
+    }
+    
+    printf("\nstr1: %s", str1);
+    printf("\nstr2: %s", str2);
+    
+	return 0;
+}
+
+
+OUTPUT:
+
+Enter str1 length: 4
+Enter str2 length: 4
+Enter the string 1: hari
+Enter the string 2: hara
+
+str1: 
+hara	
+str2: 
+hari

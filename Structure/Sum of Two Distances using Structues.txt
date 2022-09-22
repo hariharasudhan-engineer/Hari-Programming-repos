@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+struct distances
+{
+    float feet;
+    float inche;
+};
+
+int main()
+{
+    struct distances d1, d2;
+    
+    printf("Distance 1 Details\n");
+    printf("Enter Feet distance: ");
+    scanf("%f", &d1.feet);
+    printf("Enter Inch distance: ");
+    scanf("%f", &d1.inche);
+    
+    printf("Distance 2 Details\n");
+    printf("Enter Feet distance: ");
+    scanf("%f", &d2.feet);
+    printf("Enter Inch distance: ");
+    scanf("%f", &d2.inche);
+    
+    printf("\nPrint Total Feet & Inches Distance");
+    printf("\nFeet Distance: %f", (d1.feet+d2.feet));
+    printf("\nInches Distance: %f", (d1.inche+d2.inche));
+    
+    return 0;
+}

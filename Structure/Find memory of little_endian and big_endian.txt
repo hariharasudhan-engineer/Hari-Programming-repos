@@ -1,0 +1,30 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#define MAX_SIZE 100
+
+
+
+struct endianess
+{
+  //  char data[MAX_SIZE];
+    int data;
+};
+
+int main() {
+    
+    struct endianess endian;
+    char *ptr = (char*)&endian.data;
+    
+    printf("Enter the mark: ");
+    scanf("%d", &endian.data);
+    if(*ptr)
+    {
+        printf("Little Endian");
+    }
+    else
+    {
+        printf("Big Endian");
+    }
+  
+    return 0;
+}

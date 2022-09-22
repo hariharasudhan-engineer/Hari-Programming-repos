@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    char *ptr1, *ptr2, *ptr3;
+    char a[MAX_SIZE], b[MAX_SIZE];
+    int i, temp, j, len = 0;
+    
+    printf("Enter the STRING: ");
+    gets(a);
+    
+    for(i=0; a[i]!='\0'; i++)
+    {
+        len++;
+    }
+    printf("%d", len);
+}
+
+
+
+OUTPUT:
+Enter the STRING: Hey Irah
+8

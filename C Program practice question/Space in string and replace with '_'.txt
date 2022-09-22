@@ -1,0 +1,39 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    char *ptr1, *ptr2, *ptr3;
+    char str1[MAX_SIZE], str2[MAX_SIZE], str3[MAX_SIZE];
+    int i, temp, j, str1_len, str2_len;
+    
+    ptr1 = str1;
+    
+    printf("Enter str1 length: ");
+    scanf("%d", &str1_len);
+    
+    printf("Enter the string 1: ");
+    for(i=0; i<=str1_len; i++)
+    {
+        scanf("%c", ptr1);
+        ptr1++;
+    }
+// Find space in strings and replace with underscore '_'
+    for(i=0; i<str1_len; i++)
+    {
+        if(str1[i] == ' ')
+        {
+            str1[i] = '_';
+        }
+    }
+    printf("str1: %s ", str1);
+    
+	return 0;
+}
+
+
+OUTPUT:
+
+Enter str1 length: 16
+Enter the string 1: Hari Hara Sudhan
+str1: 
+Hari_Hara_Sudhan

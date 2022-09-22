@@ -1,0 +1,42 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    int *ptr1, *ptr2, *ptr3;
+    int a[MAX_SIZE], b[MAX_SIZE];
+    int i, temp, j, len;
+    
+    ptr1 = a;
+    
+    printf("Enter array length: ");
+    scanf("%d", &len);
+ 
+    printf("Enter the pointer element: ");
+    for(i=0; i<len; i++)
+    {
+        scanf("%d", ptr1);
+        ptr1++;
+    }
+    j = len-1;
+    printf("\n");
+    for(i=0; i<len; i++)
+    {
+        b[i] = a[j];
+        printf("%d ", a[j]);
+        j--;
+    }
+}
+
+
+
+
+OUTPUT:
+Enter array length: 6
+Enter the pointer element: 23
+45
+53
+1
+356
+3
+
+3 356 1 53 45 23 

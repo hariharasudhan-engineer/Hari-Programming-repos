@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+struct
+    {
+        int bit0:1;
+        int bit1:1;
+        int bit2:1;
+        int bit3:1;
+        int bit4:1;
+        int bit5:1;
+        int bit6:1;
+        int bit7:1; 
+        int bit8:1;
+        int bit9:1;
+        int bit10:1;
+        int bit11:1;
+        int bit12:1;
+        int bit13:1;
+        int bit14:1;
+        int bit15:1;
+        int bit16:1;
+        int bit17:1;
+        int bit18:1;
+        int bit19:1;
+        int bit20:1;
+        int bit21:1;
+        int bit22:1;
+        int bit23:1;
+        int bit24:1;
+        int bit25:1;
+        int bit26:1;
+        int bit27:1;
+        int bit28:1;
+        int bit29:1;
+        int bit30:1;
+        int bit31:1;
+    }byte1;
+    
+int main()
+{
+    int bit, nibble, byte, word, i;
+    printf("Enter changable bit in 32 bit form: ");
+    scanf("%d", &bit);
+    
+//    printf("%ld\n", sizeof(byte1));
+    for(i=0; i<32; i++)
+    {
+        
+    }
+    byte1 = bit;
+    byte1.bit11 = 1;
+    printf("Will be 0 ==> %d\n", byte1);
+}

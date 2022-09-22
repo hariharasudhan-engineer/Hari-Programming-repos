@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    typedef struct 
+    {
+        union
+        {
+            struct {
+                int nibble0:4;
+                int nibble1:4;
+              /*  int bit2:1;
+                int bit3:1;
+                int bit4:1;
+                int bit5:1;
+                int bit6:1;
+                int bit7:1; */
+            };
+            unsigned char byte;
+        };
+    } EigthBits;
+
+    EigthBits b;
+
+    b.byte = 0;
+    printf("Will be 0 ==> %d\n", b.byte);
+
+    b.nibble0 = 14;
+    printf("Will be 16 ==> %d\n", b.byte);
+}

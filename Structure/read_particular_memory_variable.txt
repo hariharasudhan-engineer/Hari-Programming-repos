@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+struct bit_position_find
+{
+    int data, a[MAX_SIZE], b[MAX_SIZE];
+};
+
+int main()
+{
+    int count=0, j, temp, k=0, bit_position, data;
+    struct bit_position_find user1;
+    
+    printf("Enter the data: ");
+    scanf("%d",&user1.data);
+    
+    printf("Enter the particular bit: ");
+    scanf("%d",&bit_position);
+    
+    printf("\n");
+    
+    temp = user1.data;
+    
+    for(j=0;temp>0;j++)    
+    {    
+        user1.a[j] = temp%2;    
+        temp = temp/2;
+        count++;
+      //  printf("%d ", user1.a[j]);
+    } 
+ //   printf("\n%d\n", count);
+    for(k=0; k<count; k++)
+    {
+        user1.b[k] = user1.a[count-k-1];
+      //  printf("%d ", user1.b[k]);
+    }
+    printf("\n");
+    printf("The %dth bit position of %d is %d", bit_position, user1.data, user1.b[count-1-bit_position]);
+  //  printf("\n%d", user1.b[count-1-bit_position]);
+  //  printf("\n");
+    count = 0;
+}
+
